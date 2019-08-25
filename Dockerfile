@@ -1,8 +1,8 @@
 FROM python:3.6-alpine as py-ea
-ARG ELASTALERT_VERSION=v0.2.1
+ARG ELASTALERT_VERSION=v0.3.0
 ENV ELASTALERT_VERSION=${ELASTALERT_VERSION}
 # URL from which to download Elastalert.
-ARG ELASTALERT_URL=https://github.com/Yelp/elastalert/archive/$ELASTALERT_VERSION.zip
+ARG ELASTALERT_URL=https://github.com/sherifabdlnaby/elastalert/archive/$ELASTALERT_VERSION.zip
 ENV ELASTALERT_URL=${ELASTALERT_URL}
 # Elastalert home directory full path.
 ENV ELASTALERT_HOME /opt/elastalert
@@ -25,7 +25,7 @@ RUN sed -i 's/jira>=1.0.10/jira>=1.0.10,<1.0.15/g' setup.py && \
     pip install -r requirements.txt
 
 FROM node:alpine
-LABEL maintainer="BitSensor <dev@bitsensor.io>"
+LABEL maintainer="Sherif Abdel-Naby <sherifabdlnaby@gmail.com>"
 # Set timezone for this container
 ENV TZ Etc/UTC
 
