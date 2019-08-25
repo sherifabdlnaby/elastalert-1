@@ -1,5 +1,5 @@
 FROM python:3.6-alpine as py-ea
-ARG ELASTALERT_VERSION=v0.3.0
+ARG ELASTALERT_VERSION=v0.3.0-b
 ENV ELASTALERT_VERSION=${ELASTALERT_VERSION}
 # URL from which to download Elastalert.
 ARG ELASTALERT_URL=https://github.com/sherifabdlnaby/elastalert/archive/$ELASTALERT_VERSION.zip
